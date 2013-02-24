@@ -1,0 +1,14 @@
+{
+	"components": {
+		"input": [
+			"components/jquery/jquery.js",
+			"components/lodash/lodash.js",
+			"components/backbone/backbone.js",
+			"components/hogan/lib/template.js",
+			"components/twitter-text/twitter-text.js",
+			"components/moment/moment.js",
+			"components/hide-address-bar/hide-address-bar.js"
+		],
+		"output": "assets/js/components.min.js"
+	}
+}

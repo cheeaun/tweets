@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Tweets</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<body id="tweets-app">
+	<div class="container">
+		<header>
+			<h1 id="heading">Tweets</h1>
+			<p id="desc">An off-site archive of tweets from Twitter.</p>
+			<a href="#" id="home-link" class="hide" title="Go to home"><i class="icon-home"></i></a>
+		</header>
+		<div class="well-box">
+			<form id="search-form" class="hide">
+				<i class="icon-search"></i>
+				<input type="search" class="search-query" placeholder="Search tweets" autocapitalize="off" autocorrect="off">
+			</form>
+			<h2><a href="#" class="toggle-tweets-nav"><i class="icon-chevron-down"></i> <span class="heading-text"></span></a></h2>
+			<div id="tweets-nav" class="hidden">
+				<ul class="nav nav-tabs nav-stacked">
+					<li class="route-index"><a href="#"><span class="m">Recent tweets</span> <span class="n total-tweets"></span></a></li>
+				</ul>
+				<ul class="nav nav-tabs nav-stacked months-list">
+				</ul>
+			</div>
+			<div id="tweets-container" class="hide">
+				<ul id="tweets-list" class="tweets-list media-list"></ul>
+				<a href="#" id="tweets-more" class="more-link hide">More&hellip;</a>
+			</div>
+			<div id="results-container" class="hide">
+				<ul id="results-list" class="tweets-list media-list"></ul>
+				<a href="#" id="results-more" class="more-link hide">More&hellip;</a>
+			</div>
+		</div>
+	</div>
+	<script src="config.js"></script>
+	<script src="assets/js/components.min.js"></script>
+	<script src="assets/js/templates.min.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
