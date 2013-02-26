@@ -13,7 +13,7 @@ Setup
 
 		npm install -g http-server
 		cd tweets/
-		http-server .
+		http-server
 
  5. Load `locahost:8080`.
  6. If everything is okay, upload to GitHub pages or any server you like.
