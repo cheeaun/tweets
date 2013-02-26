@@ -162,6 +162,7 @@ var AppView = Backbone.View.extend({
 		this.$more = $('#tweets-more');
 		this.$results = $('#results-list');
 		this.$moreResults = $('#results-more');
+		this.$resultsNada = $('#results-nada');
 		this.$nav = $('#tweets-nav');
 		this.$heading = this.$el.find('.heading-text');
 
@@ -243,6 +244,7 @@ var AppView = Backbone.View.extend({
 			sort: '"-created_at"'
 		};
 		this.$results.addClass('loading');
+		this.$resultsNada.addClass('hide');
 		tweetsResults.fetch({
 			dataType: 'jsonp',
 			data: data,
@@ -253,6 +255,9 @@ var AppView = Backbone.View.extend({
 					count_one: count == 1
 				}));
 				that.$results.removeClass('loading');
+				if (count <= 0){
+					that.$resultsNada.removeClass('hide');
+				}
 			}
 		});
 		this.searchData = data;
