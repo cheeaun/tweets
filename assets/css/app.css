@@ -383,6 +383,9 @@ a.header-link{
 		border-radius: 50%;
 		box-shadow: inset 0 1px #ccc;
 	}
+	.header-link:hover{
+		color: #333;
+	}
 	.well-box{
 		border: 1px solid #ddd;
 		border-radius: 5px;
