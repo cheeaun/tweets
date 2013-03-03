@@ -169,6 +169,7 @@ var AppView = Backbone.View.extend({
 		document.title = TEMPLATES.title.render({screen_name: CONFIG.screen_name});
 		$('#heading').html(TEMPLATES.heading.render({screen_name: CONFIG.screen_name}));
 
+		if (CONFIG.github_project_url) $('#github-link').removeClass('hide').attr('href', CONFIG.github_project_url);
 
 		if (CONFIG.couchdb_search) $('#search-form').removeClass('hide');
 
