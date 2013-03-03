@@ -1,0 +1,7 @@
+(function(t){
+	TEMPLATES = {
+		{{#templates}}
+		'{{name}}': new t({{{template}}}){{comma}}
+		{{/templates}}
+	}
+})(Hogan.Template);

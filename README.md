@@ -9,33 +9,48 @@ Setup
  1. Set up the database. Go to [github.com/cheeaun/tweet-couch](http://github.com/cheeaun/tweet-couch), do everything there, come back here.
  2. Fork or `git clone` or download this repo. Everything is pure client-side, so you can host it on any static web hosts, like [GitHub Pages](http://pages.github.com/).
  3. Modify `config.js`. Should be self-explanatory.
- 4. Test it on local to see if everything works. I use [http-server](https://github.com/nodeapps/http-server).
+ 4. Test it on local to see if everything works.
 
-		npm install -g http-server
 		cd tweets/
-		http-server
+		npm install
+		grunt connect
 
- 5. Load `locahost:8080`.
+ 5. Load `locahost:8000`.
  6. If everything is okay, upload to GitHub pages or any server you like.
  7. Done.
 
 Development setup
 -----------------
 
+- Buckle up.
+
+		npm install
+
 - [Bower](https://github.com/twitter/bower) for package management.
 
 		bower install
 
-- `build.json` lists the JS files to be concatenated and minified. Run this to build 'em.
+- [Grunt](http://gruntjs.com/) for running tasks.
 
-		npm install uglify-js
-		node build-components.js
+	- Concatenate and minify all JS files.
 
-- The Mustache templates are all in `templates/` folder. Run this to compile 'em.
+			grunt uglify
 
-		npm install uglify-js
-		npm install git://github.com/twitter/hogan.js.git
-		node build-templates.js
+	- Compile the Mustache templates in `templates/` folder.
+
+			grunt hogan
+
+	- Do both `uglify` and `hogan` tasks.
+
+			grunt build
+
+	- JSHint the JS.
+
+			grunt jshint
+
+	- Start a local server.
+
+			grunt connect
 
 Notes
 -----
