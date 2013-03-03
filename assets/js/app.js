@@ -169,10 +169,6 @@ var AppView = Backbone.View.extend({
 		document.title = TEMPLATES.title.render({screen_name: CONFIG.screen_name});
 		$('#heading').html(TEMPLATES.heading.render({screen_name: CONFIG.screen_name}));
 
-		var $hint = $('#heading .hint');
-		$hint.attr('data-hint', $hint.attr('title'));
-		$hint.removeAttr('title');
-		$hint.attr('ontouchstart', '');
 
 		if (CONFIG.couchdb_search) $('#search-form').removeClass('hide');
 
