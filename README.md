@@ -63,3 +63,8 @@ License
 -------
 
 Licensed under the [MIT License](http://cheeaun.mit-license.org/).
+
+Similar projects
+----------------
+
+- Simplebird <https://github.com/josephschmitt/simplebird>
