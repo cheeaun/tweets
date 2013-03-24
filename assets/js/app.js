@@ -224,6 +224,7 @@ var AppView = Backbone.View.extend({
 		}
 		this.$tweets.addClass('loading');
 		tweets.fetch({
+			reset: true,
 			dataType: 'jsonp',
 			data: data,
 			complete: function(){
@@ -298,8 +299,6 @@ var AppView = Backbone.View.extend({
 		data.startkey = startkey;
 		var that = this;
 		tweets.fetch({
-			add: true,
-			update: true,
 			silent: true,
 			dataType: 'jsonp',
 			data: data,
@@ -323,8 +322,6 @@ var AppView = Backbone.View.extend({
 		data.bookmark = bookmark;
 		var that = this;
 		tweetsResults.fetch({
-			add: true,
-			update: true,
 			silent: true,
 			dataType: 'jsonp',
 			data: data,
