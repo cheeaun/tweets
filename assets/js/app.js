@@ -271,7 +271,12 @@ var AppView = Backbone.View.extend({
 	},
 	addAll: function(){
 		this.renderMore(tweets);
-		tweets.each(this.add, this);
+		var container = document.createDocumentFragment();
+		tweets.each(function(tweet){
+			var view = new TweetView({model: tweet});
+			container.appendChild(view.render().el);
+		}, this);
+		this.$tweets.append(container);
 	},
 	addResult: function(tweet){
 		var view = new TweetView({model: tweet});
@@ -279,7 +284,12 @@ var AppView = Backbone.View.extend({
 	},
 	addAllResults: function(){
 		this.renderMore(tweetsResults);
-		tweetsResults.each(this.addResult, this);
+		var container = document.createDocumentFragment();
+		tweetsResults.each(function(tweet){
+			var view = new TweetView({model: tweet});
+			container.appendChild(view.render().el);
+		}, this);
+		this.$results.append(container);
 	},
 	reset: function(){
 		this.$tweets.empty();
