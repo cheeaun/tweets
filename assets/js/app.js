@@ -244,6 +244,7 @@ var AppView = Backbone.View.extend({
 		this.$results.addClass('loading');
 		this.$resultsNada.addClass('hide');
 		tweetsResults.fetch({
+			reset: true,
 			dataType: 'jsonp',
 			data: data,
 			success: function(){
