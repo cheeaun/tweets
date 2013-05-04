@@ -203,6 +203,18 @@ var AppView = Backbone.View.extend({
 			location.hash = '/search/' + encodeURIComponent(q);
 			if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) $searchField.blur(); // Force the keyboard to go away after 'enter'
 		});
+
+		var $lightbox = $('#lightbox').on('click', function(){
+			$lightbox.empty().removeClass('show');
+		});
+		$('.container').on('click', '.media-content a', function(e){
+			e.preventDefault();
+			var img = $(this).find('img');
+			if (!img.length) return;
+			var marginTop = $(document).scrollTop() + Math.max(10, ($(window).height() - img.prop('naturalHeight'))/2);
+			var _img = img.clone().css('margin-top', marginTop);
+			$lightbox.empty().css('height', $(document).height()).append(_img).addClass('show');
+		});
 	},
 	toggleNav: function(e){
 		e.preventDefault();

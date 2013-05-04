@@ -355,6 +355,36 @@ a.header-link{
 	box-sizing: border-box;
 }
 
+#lightbox{
+	pointer-events: none;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background-color: rgba(0,0,0,.6);
+	text-align: center;
+	-webkit-transition: opacity .3s;
+	-moz-transition: opacity .3s;
+	transition: opacity .3s;
+	font-size: 0;
+	cursor: pointer;
+}
+#lightbox.show{
+	pointer-events: auto;
+	opacity: 1;
+}
+#lightbox img{
+	box-shadow: 0 0 15px #333;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 90%;
+	height: auto;
+}
+
 @media (min-width:569px){
 	body{
 		background-color: #efefef;
