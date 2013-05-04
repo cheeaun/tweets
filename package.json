@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-contrib-uglify": "~0.1.1",
-    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
     "grunt-hogan": "~0.2.2-2",
     "hogan.js": "~2.0.0",
-    "grunt-contrib-connect": "~0.1.2"
+    "grunt-contrib-connect": "~0.3.0"
   }
 }

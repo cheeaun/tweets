@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				report: 'min'
 			},
 			build: {
 				files: {
@@ -42,7 +42,8 @@ module.exports = function(grunt) {
 		connect: {
 			server: {
 				options: {
-					keepalive: true
+					keepalive: true,
+					hostname: null
 				}
 			}
 		}
