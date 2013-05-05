@@ -204,16 +204,22 @@ var AppView = Backbone.View.extend({
 			if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) $searchField.blur(); // Force the keyboard to go away after 'enter'
 		});
 
-		var $lightbox = $('#lightbox').on('click', function(){
+		var $lightboxCover = $('#lightbox-cover');
+		var $lightbox = $('#lightbox');
+		$lightboxCover.on('click', function(){
+			$lightboxCover.removeClass('show');
 			$lightbox.empty().removeClass('show');
+		});
+		$lightbox.on('click', function(){
+			$lightboxCover.trigger('click');
 		});
 		$('.container').on('click', '.media-content a', function(e){
 			e.preventDefault();
 			var img = $(this).find('img');
 			if (!img.length) return;
-			var marginTop = $(document).scrollTop() + Math.max(10, ($(window).height() - img.prop('naturalHeight'))/2);
-			var _img = img.clone().css('margin-top', marginTop);
-			$lightbox.empty().css('height', $(document).height()).append(_img).addClass('show');
+			var _img = img.clone();
+			$lightbox.empty().css('transform', 'translateY(' + $(document).scrollTop() + 'px)').append(_img).addClass('show');
+			$lightboxCover.addClass('show');
 		});
 	},
 	toggleNav: function(e){
