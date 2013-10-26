@@ -19,15 +19,20 @@ module.exports = function(grunt) {
 				report: 'min'
 			},
 			build: {
+				options: {
+					beautify: {
+						max_line_len: 500,
+						screw_ie8: true
+					}
+				},
 				files: {
 					'assets/js/scripts.min.js': [
-						'components/jquery/jquery.js',
-						'components/lodash/lodash.js',
-						'components/backbone/backbone.js',
-						'components/hogan/web/builds/2.0.0/template-2.0.0.js',
-						'components/twitter-text/twitter-text.js',
-						'components/moment/moment.js',
-						'components/hide-address-bar/hide-address-bar.js',
+						'bower_components/jquery/jquery.js',
+						'bower_components/lodash/dist/lodash.js',
+						'bower_components/backbone/backbone.js',
+						'bower_components/hogan/web/builds/2.0.0/template-2.0.0.js',
+						'bower_components/twitter-text/twitter-text.js',
+						'bower_components/moment/moment.js',
 						'assets/js/templates.js'
 					]
 				}
@@ -35,8 +40,7 @@ module.exports = function(grunt) {
 		},
 		jshint: {
 			all: [
-				'assets/js/app.js',
-				'assets/js/scripts.min.js'
+				'assets/js/app.js'
 			]
 		},
 		connect: {

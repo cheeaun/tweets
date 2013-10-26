@@ -5,28 +5,33 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="format-detection" content="telephone=no">
 <link rel="shortcut icon" href="favicon.ico">
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/app.css">
 <body id="tweets-app">
-	<div class="container">
+	<div class="tweets-container">
 		<header>
 			<h1 id="heading">Tweets</h1>
 			<p id="desc">An off-site archive of tweets from Twitter.</p>
-			<a href="#" id="home-link" class="header-link header-link-left hide" title="Go to home"><i class="icon-home"></i></a>
-			<a href="#" id="github-link" target="_blank" class="header-link header-link-right hide" title="Go to project on GitHub"><i class="icon-github"></i></a>
+			<a href="#" id="home-link" class="header-link header-link-left hide" title="Go to home"><i class="fa fa-home"></i></a>
+			<a href="#" id="github-link" target="_blank" class="header-link header-link-right hide" title="Go to project on GitHub"><i class="fa fa-github"></i></a>
 		</header>
 		<div class="well-box">
 			<form id="search-form" class="hide">
-				<i class="icon-search"></i>
-				<input type="search" class="search-query" placeholder="Search tweets" autocapitalize="off" autocorrect="off">
+				<i class="fa fa-search"></i>
+				<input type="search" class="form-control search-query" placeholder="Search tweets" autocapitalize="off" autocorrect="off">
 			</form>
-			<h2><a href="#" class="toggle-tweets-nav"><i class="icon-chevron-down"></i> <span class="heading-text"></span></a></h2>
+			<h2>
+				<a href="#" class="toggle-tweets-nav">
+					<i class="fa fa-chevron-circle-down"></i>
+					<span class="heading-text"></span>
+				</a>
+			</h2>
 			<div id="tweets-nav" class="hidden">
-				<ul class="nav nav-tabs nav-stacked">
+				<ul class="list-unstyled">
 					<li class="route-index"><a href="#"><span class="m">Recent tweets</span> <span class="n total-tweets"></span></a></li>
 				</ul>
-				<ul class="nav nav-tabs nav-stacked months-list">
+				<ul class="list-unstyled months-list">
 				</ul>
 			</div>
 			<div id="tweets-container" class="hide">

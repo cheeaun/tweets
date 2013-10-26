@@ -26,7 +26,7 @@ var Tweets = Backbone.Collection.extend({
 	}
 });
 
-var tweets = new Tweets;
+var tweets = new Tweets();
 
 var TweetsResults = Backbone.Collection.extend({
 	url: CONFIG.couchdb_db_url + '/_design/tweets/_search/tweets',
@@ -41,7 +41,7 @@ var TweetsResults = Backbone.Collection.extend({
 	}
 });
 
-var tweetsResults = new TweetsResults;
+var tweetsResults = new TweetsResults();
 
 var TweetView = Backbone.View.extend({
 	tagName: 'li',
@@ -60,8 +60,8 @@ var TweetView = Backbone.View.extend({
 			attributes.retweeted_user = originalAttributes.user;
 			attributes.retweeted_created_at = originalAttributes.created_at;
 
-			var datetime = moment(attributes.retweeted_created_at, twitterDateFormat);
-			attributes.retweeted_datetime = datetime.format('ddd, D MMM YYYY, h:mm A');
+			var retweeted_datetime = moment(attributes.retweeted_created_at, twitterDateFormat);
+			attributes.retweeted_datetime = retweeted_datetime.format('ddd, D MMM YYYY, h:mm A');
 		}
 
 		var datetime = moment(attributes.created_at, twitterDateFormat);
@@ -70,7 +70,7 @@ var TweetView = Backbone.View.extend({
 		var relative_datetime;
 		var now = moment();
 		if (now.diff(datetime, 'days') < 1){
-			relative_datetime = datetime.fromNow(true)
+			relative_datetime = datetime.fromNow(true);
 		} else if (now.year() != datetime.year()){
 			relative_datetime = datetime.format('D MMM YY');
 		} else {
@@ -89,7 +89,7 @@ var TweetView = Backbone.View.extend({
 		attributes.user.profile_image_url = profile_image_url;
 
 		this.el.innerHTML = this.template.render(attributes);
-		
+
 		return this;
 	}
 });
@@ -129,7 +129,7 @@ var TweetNavView = Backbone.View.extend({
 					});
 					monthsCount[key] = value;
 				});
-				monthsCount['total'] = total;
+				monthsCount.total = total;
 				that.$el.find('.months-list').append(html);
 				that.$el.find('.total-tweets').text(commafy(total));
 
@@ -178,7 +178,7 @@ var AppView = Backbone.View.extend({
 		this.listenTo(tweetsResults, 'reset', this.resetResults);
 		this.listenTo(tweetsResults, 'add', this.addResult);
 
-		this.navView = new TweetNavView;
+		this.navView = new TweetNavView();
 		var $toggle = this.$el.find('.toggle-tweets-nav');
 		this.navView.bind('show', function(){
 			$toggle.addClass('open');
@@ -201,7 +201,10 @@ var AppView = Backbone.View.extend({
 			e.preventDefault();
 			var q = $searchField.val();
 			location.hash = '/search/' + encodeURIComponent(q);
-			if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) $searchField.blur(); // Force the keyboard to go away after 'enter'
+			if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)){
+				// Force the keyboard to go away after 'enter'
+				$searchField.blur();
+			}
 		});
 
 		var $lightboxCover = $('#lightbox-cover');
@@ -213,7 +216,7 @@ var AppView = Backbone.View.extend({
 		$lightbox.on('click', function(){
 			$lightboxCover.trigger('click');
 		});
-		$('.container').on('click', '.media-content a', function(e){
+		$('.tweets-container').on('click', '.media-content a', function(e){
 			e.preventDefault();
 			var img = $(this).find('img');
 			if (!img.length) return;
@@ -400,8 +403,9 @@ var AppView = Backbone.View.extend({
 		var links = nav.find('a');
 		var headingHTML = '';
 		var tpl = TEMPLATES['sub-heading-' + route];
+		var count;
 		if (route == 'index'){
-			var count = monthsCount.total;
+			count = monthsCount.total;
 			headingHTML = tpl.render({
 				count: commafy(count),
 				count_one: count == 1
@@ -412,7 +416,7 @@ var AppView = Backbone.View.extend({
 		} else if (route == 'month'){
 			var year = routeArgs[0];
 			var month = routeArgs[1];
-			var count = monthsCount[year + '-' + month];
+			count = monthsCount[year + '-' + month];
 			headingHTML = tpl.render({
 				month: moment().month(parseInt(month, 10)-1).format('MMM'),
 				year: year,
@@ -459,7 +463,7 @@ var AppView = Backbone.View.extend({
 	}
 });
 
-var app = new AppView;
+var app = new AppView();
 
 var Workspace = Backbone.Router.extend({
 	routes: {
@@ -490,7 +494,7 @@ var Workspace = Backbone.Router.extend({
 	}
 });
 
-var router = new Workspace;
+var router = new Workspace();
 
 router.bind('route', function(route, args){
 	this.currentRoute = route;
