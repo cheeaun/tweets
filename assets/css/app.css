@@ -166,7 +166,9 @@ header h1{
 	padding: 10px;
 	line-height: 1.3em;
 }
-.tweets-list li img.u-photo{
+.tweets-list li .u-photo{
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	width: 48px;
 	height: 48px;
 	background-color: #eee;
