@@ -4,10 +4,10 @@
 	"main": ["./assets/css/app.css", "./assets/js/app.js"],
 	"dependencies": {
 		"backbone": "~1.1.0",
-		"lodash": "~2.2.1",
+		"lodash": "~2.4.1",
 		"jquery": "~2.0.3",
 		"hogan": "~3.0.0",
-		"twitter-text": "~1.6.1",
-		"moment": "~2.3.1"
+		"twitter-text": "~1.7.0",
+		"moment": "~2.5.0"
 	}
 }
