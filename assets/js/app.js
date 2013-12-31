@@ -9,7 +9,7 @@ moment.lang('en', {
 	})
 });
 
-var twitterDateFormat = 'ddd MMM DD HH:mm:ss ZZ YYYY';
+var twitterDateFormat = 'YYYY-MM-DD HH:mm Z';
 
 var commafy = function(numbers){
 	return (''+numbers).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
