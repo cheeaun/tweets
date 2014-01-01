@@ -187,13 +187,11 @@ var AppView = Backbone.View.extend({
 		});
 
 		var that = this;
-		$(window).scroll(function(){
-			if (window.innerHeight + (window.pageYOffset || document.documentElement.scrollTop) >= document.body.offsetHeight){
-				setTimeout(function(){
-					$('.more-link:not(.hide)').trigger('click');
-				}, 300);
+		$(window).scroll(_.debounce(function(){
+			if (window.innerHeight + (window.pageYOffset || document.documentElement.scrollTop) >= document.body.offsetHeight - 200){
+				$('.more-link:not(.hide)').trigger('click');
 			}
-		});
+		}, 300));
 
 		var $searchForm = this.$searchForm = $('#search-form');
 		var $searchField = this.$searchField = $searchForm.find('.search-query');
