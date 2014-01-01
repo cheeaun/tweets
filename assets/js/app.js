@@ -328,7 +328,7 @@ var AppView = Backbone.View.extend({
 		this.$more.addClass('loading');
 		var startkey = this.$more.data('startkey');
 		var data = this.data;
-		data.startkey = startkey;
+		data.startkey = JSON.stringify(startkey);
 		var that = this;
 		tweets.fetch({
 			silent: true,
