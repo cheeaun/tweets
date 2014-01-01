@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'assets/js/scripts.min.js': [
-						'bower_components/jquery/jquery.js',
+						'bower_components/zepto/zepto.js',
 						'bower_components/lodash/dist/lodash.js',
 						'bower_components/backbone/backbone.js',
 						'bower_components/hogan/web/builds/2.0.0/template-2.0.0.js',
