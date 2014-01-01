@@ -218,8 +218,13 @@ var AppView = Backbone.View.extend({
 			e.preventDefault();
 			var img = $(this).find('img');
 			if (!img.length) return;
+			var src = img.attr('src') + ':large'; // Show 'large' image
 			var _img = img.clone();
-			$lightbox.empty().css('transform', 'translateY(' + $(document).scrollTop() + 'px)').append(_img).addClass('show');
+			var transform = 'translateY(' + $(window).scrollTop() + 'px)';
+			$lightbox.css({
+				transform: transform,
+				'-webkit-transform': transform
+			}).html('<img src="' + src + '" alt="">').addClass('show');
 			$lightboxCover.addClass('show');
 		});
 	},
