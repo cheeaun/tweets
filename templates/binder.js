@@ -1,8 +1,6 @@
 var Hogan = require('hogan.js');
-var t = new Hogan.Template(function(c,p,i){var _=this;_.b(i=i||"");_.b("(function(t){\r");_.b("\n" + i);_.b("	TEMPLATES = {\r");_.b("\n" + i);if(_.s(_.f("templates",c,p,1),c,p,0,47,97,"{{ }}")){_.rs(c,p,function(c,p,_){_.b("		'");_.b(_.v(_.f("name",c,p,0)));_.b("': new t(");_.b(_.t(_.f("template",c,p,0)));_.b(")");_.b(_.v(_.f("comma",c,p,0)));_.b("\r");_.b("\n");});c.pop();}_.b("	}\r");_.b("\n" + i);_.b("})(Hogan.Template);");return _.fl();;});
-
-module.exports = {
-  render : function(c, p, i) {
-    return t.render(c, p, i);
-  }
-};
+var templates = {};
+/* jshint ignore:start */
+templates['binder'] = new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("(function(t){\r");t.b("\n" + i);t.b("	TEMPLATES = {\r");t.b("\n" + i);if(t.s(t.f("templates",c,p,1),c,p,0,47,97,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("		'");t.b(t.v(t.f("name",c,p,0)));t.b("': new t(");t.b(t.t(t.f("template",c,p,0)));t.b(")");t.b(t.v(t.f("comma",c,p,0)));t.b("\r");t.b("\n" + i);});c.pop();}t.b("	}\r");t.b("\n" + i);t.b("})(Hogan.Template);");return t.fl(); },partials: {}, subs: {  }}); 
+/* jshint ignore:end */
+module.exports = templates;

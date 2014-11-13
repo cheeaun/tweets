@@ -4,14 +4,18 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		hogan: {
 			binder: {
-				templates: './templates/binder.hogan',
-				output: './templates/binder.js',
-				binderName: 'bootstrap'
+				src: __dirname + '/templates/binder.hogan',
+				dest: __dirname + '/templates/binder.js',
+				options: {
+					binderName: 'bootstrap'
+				}
 			},
 			build: {
-				templates: './templates/*.mustache',
-				output: './assets/js/templates.js',
-				binder: __dirname + '/templates/binder.js'
+				src: __dirname + '/templates/*.mustache',
+				dest: __dirname + '/assets/js/templates.js',
+				options: {
+					binderPath: __dirname + '/templates/binder.js'
+				}
 			}
 		},
 		uglify: {
@@ -21,8 +25,7 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					beautify: {
-						max_line_len: 500,
-						screw_ie8: true
+						max_line_len: 500
 					}
 				},
 				files: {
@@ -30,7 +33,7 @@ module.exports = function(grunt) {
 						'bower_components/zepto/zepto.js',
 						'bower_components/lodash/dist/lodash.js',
 						'bower_components/backbone/backbone.js',
-						'bower_components/hogan/web/builds/2.0.0/template-2.0.0.js',
+						'bower_components/hogan/web/builds/3.0.2/template-3.0.2.js',
 						'bower_components/twitter-text/twitter-text.js',
 						'bower_components/moment/moment.js',
 						'assets/js/templates.js'
@@ -47,7 +50,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					keepalive: true,
-					hostname: null
+					hostname: '*'
 				}
 			}
 		}
