@@ -196,6 +196,9 @@ header h1{
 .tweets-list li .content-footer a{
 	color: #999;
 }
+.tweets-list .tweet-body{
+	margin-left: 58px;
+}
 .tweets-list .media-content a{
 	margin-top: 4px;
 }
@@ -286,6 +289,14 @@ header h1{
 	max-width: 100%;
 	height: auto;
 	margin: 10px 0 0;
+}
+
+.media{
+	width: 100%;
+}
+
+img.emoji{
+	width: 16px;
 }
 
 @media (min-width:569px){

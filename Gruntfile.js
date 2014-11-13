@@ -35,6 +35,7 @@ module.exports = function(grunt) {
 						'bower_components/backbone/backbone.js',
 						'bower_components/hogan/web/builds/3.0.2/template-3.0.2.js',
 						'bower_components/twitter-text/twitter-text.js',
+						'bower_components/twemoji/twemoji.js',
 						'bower_components/moment/moment.js',
 						'assets/js/templates.js'
 					]

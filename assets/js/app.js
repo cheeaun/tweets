@@ -1,6 +1,6 @@
 // Twitter-like relative time strings
-moment.lang('en', {
-	relativeTime : $.extend({}, moment().lang('en').lang()._relativeTime, {
+moment.locale('en', {
+	relativeTime : $.extend({}, moment().localeData('en')._relativeTime, {
 		s: 'secs',
 		m: '1 min',
 		mm: '%d mins',
@@ -78,8 +78,11 @@ var TweetView = Backbone.View.extend({
 		}
 		attributes.relative_datetime = relative_datetime;
 
-		attributes.content = twttr.txt.autoLink(attributes.text, {
+		attributes.content = twemoji.parse(twttr.txt.autoLink(attributes.text, {
 			urlEntities: attributes.entities.urls.concat(attributes.entities.media || [])
+		}), {
+			folder: 'svg',
+			ext: '.svg'
 		});
 
 		var profile_image_url = attributes.user.profile_image_url_https;

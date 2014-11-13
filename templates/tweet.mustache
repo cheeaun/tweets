@@ -1,10 +1,10 @@
-<div class="media h-entry" data-twt-id="{{id_str}}">
+<div class="tweet h-entry" data-twt-id="{{id_str}}">
 	{{#user}}
 		<a target="_blank" href="https://twitter.com/{{screen_name}}" class="avatar float-left" data-screen-name="{{screen_name}}">
 			<div class="u-photo img-rounded" style="background-image: url({{profile_image_url}})"></div>
 		</a>
 	{{/user}}
-	<div class="media-body">
+	<div class="tweet-body">
 		<a target="_blank" href="https://twitter.com/{{#user}}{{screen_name}}{{/user}}/status/{{id_str}}" rel="bookmark" class="permalink float-right">
 			<span title="{{datetime}}" class="dt-updated">{{relative_datetime}}</span>
 		</a>
