@@ -105,7 +105,7 @@ var TweetNavView = Backbone.View.extend({
 		var that = this;
 		$.ajax({
 			url: CONFIG.couchdb_db_url + '/_design/tweets/_view/monthly_total',
-			dataType: 'jsonp',
+			dataType: 'json',
 			data: {
 				group: true
 			},
@@ -252,7 +252,7 @@ var AppView = Backbone.View.extend({
 		this.$tweets.addClass('loading');
 		tweets.fetch({
 			reset: true,
-			dataType: 'jsonp',
+			dataType: 'json',
 			data: data,
 			complete: function(){
 				that.$tweets.removeClass('loading');
@@ -272,7 +272,7 @@ var AppView = Backbone.View.extend({
 		this.$resultsNada.addClass('hide');
 		tweetsResults.fetch({
 			reset: true,
-			dataType: 'jsonp',
+			dataType: 'json',
 			data: data,
 			success: function(){
 				var count = tweetsResults.total;
@@ -338,7 +338,7 @@ var AppView = Backbone.View.extend({
 		var that = this;
 		tweets.fetch({
 			silent: true,
-			dataType: 'jsonp',
+			dataType: 'json',
 			data: data,
 			success: function(){
 				that.addAll();
@@ -361,7 +361,7 @@ var AppView = Backbone.View.extend({
 		var that = this;
 		tweetsResults.fetch({
 			silent: true,
-			dataType: 'jsonp',
+			dataType: 'json',
 			data: data,
 			success: function(){
 				that.addAllResults();
