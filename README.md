@@ -58,6 +58,7 @@ Notes
 - Favicon image is from Adam Whitcroft's [Batch](http://adamwhitcroft.com/batch/) icon set.
 - The design and layout pretty much follows Twitter's [Developer Display Requirements](https://dev.twitter.com/terms/display-requirements).
 - Some parts of the design are inspired by Andy Graulund's [Tweet Nest](http://pongsocket.com/tweetnest/) as well.
+- The emojis are [Twemojis made by Twitter](http://twitter.github.io/twemoji/).
 
 Todo
 ----
