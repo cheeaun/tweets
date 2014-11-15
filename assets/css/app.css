@@ -199,13 +199,10 @@ header h1{
 .tweets-list .tweet-body{
 	margin-left: 58px;
 }
-.tweets-list .media-content a{
-	margin-top: 4px;
-}
 .tweets-list .media-content img{
 	max-width: 99%;
-	box-shadow: 0 0 2px #ccc;
-	margin: 0 2px 2px;
+	box-shadow: 0 0 3px #aaa;
+	margin: 5px 2px 2px;
 }
 
 .more-link{
