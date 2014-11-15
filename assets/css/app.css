@@ -297,6 +297,7 @@ header h1{
 
 img.emoji{
 	width: 16px;
+	margin: 0 2px;
 }
 
 @media (min-width:569px){
